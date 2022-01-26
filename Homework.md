@@ -110,17 +110,21 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
 ### Count records
 
+```
 SELECT COUNT(1)
 FROM yellow_taxi_trips
 WHERE date(tpep_pickup_datetime) = '2021-01-15'
 
+```
 ###  Largest tip for each day
 
+
+```
 SELECT CAST(tpep_pickup_datetime AS DATE) as date, MAX(tip_amount) as tip
 FROM yellow_taxi_trips
 GROUP BY date
 ORDER BY tip DESC
 LIMIT 1
 
-
+```
 
